@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple, secure, and responsive login page">
+  <title>Login - Welcome Back</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="login-container">
+    <div class="login-card">
+      <!-- Header section -->
+      <header class="login-header">
+        <div class="brand-badge" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+        </div>
+        <h1 class="login-title">Welcome back</h1>
+        <p class="login-subtitle">Please enter your details to access your account.</p>
+      </header>
 
+      <!-- Alert notification for messages -->
+      <div id="login-alert" class="alert hidden" role="alert" aria-live="polite"></div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="login-form" novalidate>
+        <!-- Email field -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email address</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="you@example.com" 
+              autocomplete="username" 
+              enterkeyhint="next" 
+              required
+            >
+          </div>
+          <span class="field-error" id="email-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Password field -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="password" class="form-label">Password</label>
+            <a href="#forgot-password" class="forgot-link" tabindex="0">Forgot password?</a>
+          </div>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              class="form-input" 
+              placeholder="••••••••" 
+              autocomplete="current-password" 
+              enterkeyhint="done" 
+              required
+            >
+            <!-- Password visibility toggle button -->
+            <button 
+              type="button" 
+              id="toggle-password" 
+              class="toggle-password-btn" 
+              aria-label="Show password" 
+              aria-pressed="false"
+            >
+              <!-- Eye Icon (Show) -->
+              <svg id="eye-icon" class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <!-- Eye Off Icon (Hide) -->
+              <svg id="eye-off-icon" class="eye-icon hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                <line x1="2" y1="2" x2="22" y2="22"></line>
+              </svg>
+            </button>
+          </div>
+          <span class="field-error" id="password-error" aria-live="polite"></span>
+        </div>
+
+        <!-- Options row: Remember me -->
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="remember-me" name="remember-me">
+            <span class="custom-checkbox" aria-hidden="true"></span>
+            <span class="checkbox-label">Remember me for 30 days</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submit-btn" class="submit-btn">
+          <span class="btn-text">Sign In</span>
+          <span class="btn-spinner hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <!-- Footer / Signup link -->
+      <footer class="login-footer">
+        <p>Don't have an account? <a href="#signup" class="signup-link">Sign up</a></p>
+        <div class="demo-credentials">
+          <p><strong>Demo tip:</strong> Use <code>user@example.com</code> and password <code>password123</code></p>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
